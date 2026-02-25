@@ -3,6 +3,7 @@
 **/.terragrunt-cache/*
 *.tfstate*
 *.tfvars
+!examples/**/*.tfvars
 
 # Secrets are not allowed in general
 *.key

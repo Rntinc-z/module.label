@@ -4,23 +4,13 @@
 module "label" {
   source = "../../"
 
-  prefix      = "myorg"
-  environment = "prod"
-  type        = "app"
-  name        = "web"
+  prefix      = var.prefix
+  environment = var.environment
+  type        = var.type
+  name        = var.name
 
-  use_custom_name = true
-  custom_name     = "my-fully-custom-resource-name"
+  use_custom_name = var.use_custom_name
+  custom_name     = var.custom_name
 
-  tags = {
-    BusinessUnit = "Engineering"
-  }
-}
-
-output "id" {
-  value = module.label.id
-}
-
-output "tags" {
-  value = module.label.tags
+  tags = var.tags
 }

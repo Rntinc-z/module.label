@@ -4,20 +4,9 @@
 module "label" {
   source = "../../"
 
-  prefix      = "myorg"
-  environment = "prod"
-  type        = "app"
-  name        = "web"
-
-  tags = {
-    BusinessUnit = "Engineering"
-  }
-}
-
-output "id" {
-  value = module.label.id
-}
-
-output "tags" {
-  value = module.label.tags
+  prefix      = var.prefix
+  environment = var.environment
+  type        = var.type
+  name        = var.name
+  tags        = var.tags
 }
